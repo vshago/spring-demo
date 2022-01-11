@@ -14,7 +14,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "books")
+@Table(name = "books", indexes = {
+        @Index(name = "idx_books_author", columnList = "author")
+})
 public class BookEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
